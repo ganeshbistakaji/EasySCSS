@@ -1,6 +1,6 @@
 # EasySCSS
 
-![EasySCSS Logo](link-to-random-image)
+![EasySCSS Logo](logo.png)
 
 ## Description
 
