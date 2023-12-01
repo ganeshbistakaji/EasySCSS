@@ -8,4 +8,4 @@ EasySCSS is a library designed to simplify SCSS development, making it easier an
 
 ## Instructions
 
-Coming soon...
+![WIKI - GUIDE](https://github.com/ganeshbistakaji/EasySCSS/wiki/INTRODUCTION)
