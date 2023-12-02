@@ -17,7 +17,7 @@
 */
 
 // SMALL
-@mixin form_s(
+@mixin input_s(
     $width: null,
     $height: null,
     $font-size: null,
@@ -71,7 +71,7 @@
 }
 
 // SMALL HOVER
-@mixin form_hover_s(
+@mixin input_hover_s(
     $width: null,
     $height: null,
     $font-size: null,
@@ -124,7 +124,7 @@
 
 
 // MEDIUM
-@mixin form_m(
+@mixin input_m(
     $width: null,
     $height: null,
     $font-size: null,
@@ -178,7 +178,7 @@
 }
 
 // HOVER
-@mixin form_hover_m(
+@mixin input_hover_m(
     $width: null,
     $height: null,
     $font-size: null,
@@ -231,7 +231,7 @@
 
 
 // LARGE
-@mixin form_lg(
+@mixin input_lg(
     $width: null,
     $height: null,
     $font-size: null,
@@ -285,7 +285,7 @@
 }
 
 // HOVER
-@mixin form_hover_lg(
+@mixin input_hover_lg(
     $width: null,
     $height: null,
     $font-size: null,
@@ -338,7 +338,7 @@
 
 
 // EXTRA LARGE
-@mixin form_xl(
+@mixin input_xl(
     $width: null,
     $height: null,
     $font-size: null,
@@ -392,7 +392,7 @@
 }
 
 // HOVER
-@mixin form_hover_xl(
+@mixin input_hover_xl(
     $width: null,
     $height: null,
     $font-size: null,
