@@ -1,0 +1,32 @@
+/*
+  FLEXBOX DEVELOPER REFERENCE
+
+  Properties Abbreviation:
+  - flx = flex
+  - aln = align
+  - jst = justify
+  - ctn = content
+  - gp  = gap
+  - col = column
+*/
+
+@mixin flexbox(
+  $flx-direction: null,
+  $flx-wrap: null,
+  $flx-grow: null,
+  $flx-shrink: null,
+  $aln-items: null,
+  $jst-ctn: null,
+  $row-gp: null,
+  $col-gp: null
+) {
+  display: flex;
+  flex-direction: if($flx-direction, $flx-direction, row);
+  flex-wrap: if($flx-wrap, $flx-wrap, wrap);
+  flex-grow: if($flx-grow, $flx-grow, 0);
+  flex-shrink: if($flx-shrink, $flx-shrink, 0);
+  align-items: if($aln-items, $aln-items, flex-start);
+  justify-content: if($jst-ctn, $jst-ctn, flex-start);
+  row-gap: if($row-gp, $row-gp, 0px);
+  column-gap: if($col-gp, $col-gp, 0px);
+}
