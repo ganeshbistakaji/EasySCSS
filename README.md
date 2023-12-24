@@ -18,7 +18,7 @@ EasySCSS is a library designed to simplify SCSS development, making it easier an
 - [x] Buttons
 - [x] Hyperlinks
 - [x] Navbar
-- [] Flexbox
+- [x] Flexbox
 - [] Grid
 - [] Footer
 - [] Alert
