@@ -1,0 +1,56 @@
+/*
+  HYPERLINK DEVELOPER REFERENCE
+
+  Properties Abbreviation:
+  - pd = padding
+  - mg = margin
+  - hori = horizontal
+  - vert = vertical
+  - bg = background
+  - bdr = border
+  - decor = decoration
+*/
+
+@mixin hyperlink(
+    $font-size: null,
+    $font-weight: null,
+    $bg-color: null,
+    $color: null,
+    $pd-hori: null,
+    $pd-vert: null,
+    $text-decor: null
+) {
+    font-size: if($font-size, $font-size, 16px);
+    font-weight: if($font-weight, $font-weight, 400);
+    background-color: if($bg-color, $bg-color, transparent);
+    color: if($color, $color, blue);
+    padding-left: if($pd-hori, $pd-hori, 0px);
+    padding-right: if($pd-hori, $pd-hori, 0px);
+    padding-top: if($pd-vert, $pd-vert, 0px);
+    padding-bottom: if($pd-vert, $pd-vert, 0px);
+    text-decoration: if($text-decor, $text-decor, none);
+    cursor: pointer;
+}
+
+@mixin hyperlink_hover(
+    $font-size: null,
+    $font-weight: null,
+    $bg-color: null,
+    $color: null,
+    $pd-hori: null,
+    $pd-vert: null,
+    $text-decor: null,
+    $opacity: null
+) {
+    font-size: if($font-size, $font-size, 16px);
+    font-weight: if($font-weight, $font-weight, 400);
+    background-color: if($bg-color, $bg-color, transparent);
+    color: if($color, $color, blue);
+    padding-left: if($pd-hori, $pd-hori, 0px);
+    padding-right: if($pd-hori, $pd-hori, 0px);
+    padding-top: if($pd-vert, $pd-vert, 0px);
+    padding-bottom: if($pd-vert, $pd-vert, 0px);
+    text-decoration: if($text-decor, $text-decor, none);
+    opacity: if($opacity, $opacity, 50%);
+    cursor: pointer;
+}

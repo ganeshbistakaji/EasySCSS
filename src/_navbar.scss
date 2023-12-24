@@ -1,0 +1,144 @@
+@mixin navbar(
+    $nav_width: null,
+    $nav_height: null,
+    $bg-color: null,
+
+    $logo-font-size: null,
+    $logo-font-weight: null,
+    $logo-color: null,
+    $logo-pd-hori: null,
+    $logo-pd-vert: null,
+
+    $item-font-size: null,
+    $item-font-weight: null,
+    $item-color: null,
+    $item-pd-hori: null,
+    $item-pd-vert: null,
+    $item-text-decor: null,
+    $item-hover-bg: null,
+
+    $rp-menu-hover-bg: null,
+    $rp-menu-thickness: null,
+    $rp-menu-color: null,
+    $rp-menu-active-bg: null,
+
+    $rp-dropdown-bg: null
+) {
+    width: if($nav_width, $nav_width, 100%);
+    height: if($nav_height, $nav_height, 50px);
+    background-color: if($bg-color, $bg-color, rgba(206, 103, 154, 0.5));
+    position: relative;
+    .nav-header {
+        display: inline;
+        .nav-title {
+            display: inline-block;
+            font-size: if($logo-font-size, $logo-font-size, 22px);
+            font-weight: if($logo-font-weight, $logo-font-weight, 900);
+            color: if($logo-color, $logo-color, black);
+            padding-left: if($logo-pd-hori, $logo-pd-hori, 10px);
+            padding-right: if($logo-pd-hori, $logo-pd-hori, 10px);
+            padding-top: if($logo-pd-vert, $logo-pd-vert, 10px);
+            padding-bottom: if($logo-pd-vert, $logo-pd-vert, 10px);
+        }
+    }
+    .nav-btn {
+        display: none;
+    }
+    .nav-links {
+        display: inline;
+        float: right;
+        a {
+            display: inline-block;
+            color: if($item-color, $item-color, black);
+            padding-left: if($item-pd-hori, $item-pd-hori, 10px);
+            padding-right: if($item-pd-hori, $item-pd-hori, 10px);
+            padding-top: if($item-pd-vert, $item-pd-vert, 13px);
+            padding-bottom: if($item-pd-vert, $item-pd-vert, 13px);
+            text-decoration: if($item-text-decor, $item-text-decor, none);
+            font-size: if($item-font-size, $item-font-size, 18px);
+            font-weight: if($item-font-weight, $item-font-weight, 400);
+            &:hover {
+                background-color: if($item-hover-bg, $item-hover-bg, rgba(206, 103, 154, 0.7));
+            }
+        }
+    }
+    #nav-check {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .nav-btn {
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding-left: 13px;
+                padding-right: 13px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                &:hover {
+                    background-color: if($rp-menu-hover-bg, $rp-menu-hover-bg, rgba(206, 103, 154, 0.7));
+                }
+                span {
+                    display: block;
+                    width: 25px;
+                    height: 10px;
+                    border-top-width: if($rp-menu-thickness, $rp-menu-thickness, 2px);
+                    border-style: solid;
+                    border-color: if($rp-dropdown-bg, $rp-menu-color, black);
+                }
+            }
+        }
+        #nav-check {
+            &:checked {
+                ~ {
+                    .nav-btn {
+                        > label {
+                            background-color: if($rp-menu-active-bg, $rp-menu-active-bg, rgba(206, 103, 154, 1));
+                        }
+                    }
+                }
+            }
+        }
+        .nav-links {
+            position: absolute;
+            display: block;
+            width: 100%;
+            background-color: if($rp-dropdown-bg, $rp-dropdown-bg, rgba(206, 103, 154, 1));
+            height: 0px;
+            transition: all 0.3s ease-in;
+            overflow-y: hidden;
+            top: 50px;
+            left: 0px;
+            a {
+                display: block;
+                width: 100%;
+            }
+        }
+        #nav-check {
+            &:not(:checked) {
+                ~ {
+                    .nav-links {
+                        height: 0px;
+                    }
+                }
+            }
+            &:checked {
+                ~ {
+                    .nav-links {
+                        height: calc(100vh - 50px);
+                        overflow-y: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+CREDITS: https://codepen.io/jo_Geek/pen/xgbaEr
+*/
